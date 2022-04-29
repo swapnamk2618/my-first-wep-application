@@ -1,10 +1,9 @@
 package com.dlithe.demo.controller;
 
+import com.dlithe.demo.dto.ProductDetailsRequest;
 import com.dlithe.demo.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class TestController {
@@ -13,8 +12,21 @@ public class TestController {
     private TestService testService;
 
    @GetMapping("get-product-details/{productName}")
-    public String myShopCart(@PathVariable String productName){
-     String result= testService.getProductDetails(productName);
-       return result;
+    public String displayProductDetail(@PathVariable String productName){
+ return testService.fetchProductDetails(productName);
    }
+
+    @PostMapping("get-product-details")
+    public String displayProductDetails(@RequestBody ProductDetailsRequest productDetailsRequest){
+        return testService.registerProduct(productDetailsRequest);
+    }
+
+    @GetMapping("login/{username}/{password}")
+    public String loginDetails(@PathVariable String username, @PathVariable String password) {
+//        return "Username is: "+username+" "+"Password is: "+password;
+        return testService.loginDetails(username, password);
+
+    }
+
+
 }
