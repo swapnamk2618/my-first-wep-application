@@ -7,12 +7,11 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@EqualsAndHashCode
 @ToString
+@EqualsAndHashCode
+public class ProductDetailsResponse {
 
-public class ProductDetailsRequest {
+    private int id;
     private String name;
-    private String type;
-    private String price;
-    private String details;
+    private int age;
 }

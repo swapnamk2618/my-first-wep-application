@@ -21,9 +21,14 @@ public class TestController {
         return testService.registerProduct(productDetailsRequest);
     }
 
+//    //Product details based on  product id
+//    @GetMapping("get-customer-details/{productId}")
+//    public ProductDetailsRequest fetchDetails(@PathVariable int productId){
+//        return testService.fetchProductDetails(productId);
+//    }
+
     @GetMapping("login/{username}/{password}")
     public String loginDetails(@PathVariable String username, @PathVariable String password) {
-//        return "Username is: "+username+" "+"Password is: "+password;
         return testService.loginDetails(username, password);
 
     }
