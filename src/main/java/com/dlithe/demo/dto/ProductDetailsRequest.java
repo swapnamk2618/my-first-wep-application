@@ -13,6 +13,6 @@ import lombok.ToString;
 public class ProductDetailsRequest {
     private String name;
     private String type;
-    private String price;
+    private int price;
     private String details;
 }

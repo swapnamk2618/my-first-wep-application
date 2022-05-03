@@ -22,14 +22,18 @@ public class Product {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "type")
-    private String type;
-
     @Column(name = "price")
-    private String price;
+    private int price;
 
     @Column(name = "details")
     private String details;
+
+    @Column(name = "type")
+    private String type;
+
+    @Column(name = "type")
+    private int rating;
+
 
 
 }
